@@ -1,6 +1,97 @@
 import type { ExperienceItem } from "./experience.types";
 
 export const EXPERIENCES: ExperienceItem[] = [
+  // 현재 진행 중인 핵심 플랫폼 프로젝트
+  {
+    id: "cjone-partner-settlement-center",
+    company: "CJ OliveNetworks",
+    team: "CJ ONE 팀",
+    period: "2026.01 ~ Present",
+    title: "CJ ONE 파트너센터(정산센터)",
+    kind: "architecture",
+    techStack: ["React", "Next.js", "TypeScript", "Java", "Spring Boot"],
+    summary:
+      "CJ ONE 파트너사의 정산 및 운영 업무를 지원하는 신규 파트너 플랫폼 구축 프로젝트입니다. Application Architect와 Frontend Lead 관점에서 서비스 아키텍처, 프론트엔드 표준 구조, 공통 컴포넌트 체계, BFF 기반 연동 구조를 함께 설계하고 있습니다.",
+    highlights: [
+      "파트너 운영 업무의 확장성을 고려해 Next.js 기반 프론트엔드 프레임워크와 모듈 구조를 설계",
+      "공통 컴포넌트, API 연동, 상태 관리, 코드 컨벤션을 표준화해 다수 개발자가 병렬로 개발 가능한 기반 마련",
+      "BFF 구조를 전제로 화면 요구사항과 백엔드 API 경계를 조율하며 유지보수 가능한 서비스 구조 설계"
+    ],
+    roles: ["Application Architect", "Frontend Development Lead"],
+    responsibilities: [
+      "전체 시스템 아키텍처 설계 참여",
+      "프론트엔드 애플리케이션 구조 및 Next.js 기반 프레임워크 구축",
+      "공통 컴포넌트 체계, API 연동 구조, 상태 관리 구조 설계",
+      "개발 표준 및 코드 컨벤션 수립",
+      "프론트엔드 개발 리딩 및 구현 방향 조율"
+    ],
+    achievements: [
+      "신규 서비스 아키텍처 표준 수립",
+      "공통 컴포넌트 기반 UI 개발 체계 구축",
+      "프론트엔드 개발 생산성과 코드 일관성 향상",
+      "향후 기능 확장을 고려한 파트너 플랫폼 구조 설계"
+    ],
+    challenges: [
+      "다수 개발자가 동시에 개발 가능한 모듈 구조 설계",
+      "정산/운영 업무 변화에 대응할 수 있는 확장 가능한 프론트엔드 구조 설계",
+      "유지보수성을 고려한 공통 컴포넌트 시스템 구축",
+      "BFF 기반 화면/API 연동 경계 설계"
+    ],
+    badgeLabel: "Core Platform",
+    isSpotlight: true
+  },
+  {
+    id: "cjone-global-oauth-platform",
+    company: "CJ OliveNetworks",
+    team: "CJ ONE 팀",
+    period: "2026.01 ~ Present",
+    title: "CJ ONE Global OAuth Platform",
+    kind: "architecture",
+    techStack: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "Java",
+      "Spring Boot",
+      "OAuth 2.0",
+      "Redis"
+    ],
+    summary:
+      "CJ ONE 글로벌 서비스 전반에서 공통으로 사용할 수 있는 OAuth 기반 인증 플랫폼 구축 프로젝트입니다. 분산되어 있던 인증 연동 방식을 표준화하고, 공통 SDK와 토큰 관리 정책을 통해 서비스별 중복 구현을 줄이는 플랫폼 아키텍처를 설계하고 있습니다.",
+    highlights: [
+      "OAuth 2.0 Authorization Code Flow를 기반으로 글로벌 서비스가 공통으로 사용할 인증 플랫폼 구조 설계",
+      "공통 SDK 개발을 리드해 서비스별 인증 연동 방식을 표준화하고 중복 구현을 줄이는 방향 수립",
+      "Refresh Token 관리와 Redis 기반 토큰 저장 전략을 검토하며 보안성과 확장성을 함께 고려"
+    ],
+    roles: [
+      "Application Architect",
+      "Frontend Development Lead",
+      "SDK Development Lead"
+    ],
+    responsibilities: [
+      "OAuth 인증 플랫폼 아키텍처 설계",
+      "프론트엔드 구조 설계 및 인증 흐름 설계",
+      "인증 SDK 설계 및 개발 리딩",
+      "서비스 연동 표준 및 토큰 관리 정책 수립",
+      "개발 조직 간 기술 협의 주도"
+    ],
+    achievements: [
+      "글로벌 인증 플랫폼 표준 수립",
+      "인증 로직 공통화 및 SDK 기반 연동 체계 구축",
+      "서비스별 중복 인증 개발 감소",
+      "향후 글로벌 서비스 확장을 고려한 인증 아키텍처 설계"
+    ],
+    challenges: [
+      "OAuth 2.0 Authorization Code Flow 기반 인증 흐름 설계",
+      "Refresh Token 관리 전략 수립",
+      "Redis 기반 토큰 저장 구조 설계",
+      "다수 서비스가 사용할 수 있는 SDK 중심 플랫폼 구조 설계",
+      "보안성과 확장성을 동시에 고려한 인증 체계 구축"
+    ],
+    badgeLabel: "Core Platform",
+    isSpotlight: true
+  },
+
   // 현재 진행형/핵심 아키텍처
   {
     id: "cjone-msa-cqrs-points",
@@ -110,8 +201,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     highlights: [
       "IPFS를 CDN 대체 구조로 도입하고 자동 업로드 스크립트로 NFT 메타데이터/이미지 배포 파이프라인 구축",
       "NFT 지표를 실시간 조회 가능한 대시보드 UI/UX 설계 및 Next.js 기반 SSR/CSR 하이브리드 패턴 적용"
-    ],
-    isRecent: true
+    ]
   },
   {
     id: "event-automation",
@@ -192,4 +282,3 @@ export const EXPERIENCES: ExperienceItem[] = [
     isCondensed: true
   }
 ];
-

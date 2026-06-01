@@ -13,11 +13,10 @@ export function HomePage() {
         <SectionTitle
           eyebrow="Experience"
           title="주요 경력"
-          description="최근 경력을 중심으로 아키텍처·서비스·DevOps 경험을 묶어서 정리했습니다. 이전 회사 경력은 요약 형태로만 제공합니다."
+          description="10년 이상의 개발 경력을 바탕으로 대규모 서비스의 아키텍처 설계, 인증 플랫폼 구축, 프론트엔드 리딩 및 공통 플랫폼 개발을 수행하고 있습니다."
         />
         <ExperienceTimeline />
       </section>
     </>
   );
 }
-

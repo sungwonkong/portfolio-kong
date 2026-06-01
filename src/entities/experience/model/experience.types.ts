@@ -10,6 +10,12 @@ export type ExperienceItem = {
   techStack: string[];
   summary: string;
   highlights: string[];
+  roles?: string[];
+  responsibilities?: string[];
+  achievements?: string[];
+  challenges?: string[];
+  badgeLabel?: string;
+  isSpotlight?: boolean;
   image?: string;
   imageAlt?: string;
   gallery?: { src: string; alt?: string }[];
@@ -17,4 +23,3 @@ export type ExperienceItem = {
   isRecent?: boolean;
   isCondensed?: boolean;
 };
-

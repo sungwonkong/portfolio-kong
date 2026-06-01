@@ -7,15 +7,34 @@ import { SectionTitle } from "@/shared/ui/section-title";
 import Link from "next/link";
 
 type Props = {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 };
 
 function getExperience(id: string): ExperienceItem | undefined {
   return EXPERIENCES.find((exp) => exp.id === id);
 }
 
-export function generateMetadata({ params }: Props): Metadata {
-  const exp = getExperience(params.id);
+function DetailList({ title, items }: { title: string; items?: string[] }) {
+  if (!items || items.length === 0) return null;
+
+  return (
+    <section className="space-y-3 text-sm text-slate-200">
+      <h3 className="text-sm font-semibold text-slate-50">{title}</h3>
+      <ul className="space-y-1.5">
+        {items.map((item) => (
+          <li key={item} className="flex gap-2">
+            <span className="mt-1 h-[3px] w-[3px] rounded-full bg-teal-400/70" />
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+  );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { id } = await params;
+  const exp = getExperience(id);
   if (!exp) return {};
 
   return {
@@ -24,8 +43,9 @@ export function generateMetadata({ params }: Props): Metadata {
   };
 }
 
-export default function ExperienceDetailPage({ params }: Props) {
-  const exp = getExperience(params.id);
+export default async function ExperienceDetailPage({ params }: Props) {
+  const { id } = await params;
+  const exp = getExperience(id);
 
   if (!exp) {
     notFound();
@@ -90,6 +110,19 @@ export default function ExperienceDetailPage({ params }: Props) {
         <span>· {exp.period}</span>
       </div>
 
+      {exp.roles && exp.roles.length > 0 && (
+        <div className="flex flex-wrap gap-2 text-[11px] text-teal-200">
+          {exp.roles.map((role) => (
+            <span
+              key={role}
+              className="rounded-full border border-teal-400/30 bg-teal-400/10 px-2.5 py-0.5"
+            >
+              {role}
+            </span>
+          ))}
+        </div>
+      )}
+
       <div className="flex flex-wrap gap-2 text-[11px] text-slate-300">
         {exp.techStack.map((t) => (
           <span
@@ -116,6 +149,11 @@ export default function ExperienceDetailPage({ params }: Props) {
           ))}
         </div>
       )}
+
+      <DetailList title="담당 역할" items={exp.roles} />
+      <DetailList title="주요 업무" items={exp.responsibilities} />
+      <DetailList title="주요 성과" items={exp.achievements} />
+      <DetailList title="기술적 도전 과제" items={exp.challenges} />
 
       <section className="space-y-3 text-sm text-slate-200">
         <h3 className="text-sm font-semibold text-slate-50">주요 역할 &amp; 설계 포인트</h3>
@@ -233,4 +271,3 @@ export default function ExperienceDetailPage({ params }: Props) {
     </div>
   );
 }
-

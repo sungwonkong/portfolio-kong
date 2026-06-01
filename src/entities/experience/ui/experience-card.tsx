@@ -17,6 +17,7 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
     <article
       className={[
         "relative rounded-xl border border-slate-700/60 bg-slate-900/60 p-4 shadow-sm backdrop-blur-sm transition hover:border-teal-400/60 hover:shadow-teal-500/10 hover:-translate-y-0.5",
+        item.isSpotlight ? "border-amber-300/30 shadow-amber-500/10" : "",
         emphasizeArchitecture && isArchitecture ? "ring-1 ring-teal-400/80" : ""
       ]
         .filter(Boolean)
@@ -32,9 +33,20 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
               {item.company}
               {item.team && ` · ${item.team}`}
             </p>
+            {item.roles && item.roles.length > 0 && (
+              <p className="mt-1 text-[11px] font-medium text-teal-200">
+                {item.roles.join(" · ")}
+              </p>
+            )}
           </div>
           <div className="flex flex-col items-end gap-1">
-            {item.isRecent && <Badge>Recent</Badge>}
+            {item.badgeLabel ? (
+              <Badge className="animate-pulse border-amber-300/60 bg-amber-300/10 text-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.18)]">
+                {item.badgeLabel}
+              </Badge>
+            ) : (
+              item.isRecent && <Badge>Recent</Badge>
+            )}
             {item.isCondensed && (
               <span className="text-[10px] text-slate-500">
                 요약
@@ -75,7 +87,7 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
       )}
 
         <div className="mt-3 flex flex-wrap gap-1.5">
-          {item.techStack.slice(0, 6).map((t) => (
+          {item.techStack.map((t) => (
             <span
               key={t}
               className="rounded-full bg-slate-800/80 px-2 py-0.5 text-[10px] text-slate-300"
@@ -87,4 +99,3 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
       </article>
   );
 }
-
