@@ -6,21 +6,33 @@ export const EXPERIENCES: ExperienceItem[] = [
     company: "CJ OliveNetworks",
     team: "CJ ONE 팀",
     period: "2026 ~ Present",
-    title: "CJ ONE newGms / Orbit 백오피스 고도화",
+    title: "CJ ONE newGms — MSA·BFF·Frontend Core Architecture",
     kind: "architecture",
-    techStack: ["React", "Next.js", "TypeScript", "Java", "Spring Boot", "Gradle", "PostgreSQL"],
-    summary: "CJ ONE 운영 백오피스의 신규 기능을 개발하며 Orbit 멤버십 의견관리 화면을 newGms 환경에서 확장하는 프로젝트입니다. 화면 구조, API 연동 및 디자인 시스템 적용을 중심으로 작업하고 있습니다.",
+    techStack: ["MSA", "BFF", "React", "Next.js", "TypeScript", "Java", "Spring Boot", "OAuth 2.0", "Design System"],
+    summary:
+      "CJ ONE newGms 플랫폼의 코어 아키텍처를 설계·개발하는 프로젝트입니다. 도메인별 업무 특성을 반영한 MSA 경계를 정의하고, 공통 인증·인가 체계와 BFF를 통한 도메인 로직/애플리케이션 로직의 책임 분리를 설계했습니다. 프론트엔드 전반의 애플리케이션 프레임워크와 공통 개발 기반을 직접 설계·개발하며 플랫폼 차원의 일관성과 확장성을 확보하는 데 집중했습니다.",
     highlights: [
-      "멤버십 의견관리(/membership/opinions)의 검색·목록·상태·페이징 기능 설계 및 개발",
-      "backoffice.feedback 데이터 모델과 백엔드 API를 고려한 화면 연동 구조 검토",
-      "Figma 디자인 시스템 기반 공통 UI 및 사용자 피드백 패턴 적용",
-      "Spring Boot·Gradle 개발 환경의 소스 경로 및 빌드 이슈 분석",
-      "권한 조회 API 중복 요청 문제에 대해 BFF 단일 요청 병합(singleflight), 단기 L1 캐시, Redis L2 캐시 및 권한 검증 경계 설계안을 비교 검토"
+      "MSA 도메인 아키텍처: 각 업무 도메인의 특성과 책임을 분석해 서비스 경계 및 도메인 간 연동 구조 설계",
+      "공통 인증·인가: 서비스별 중복을 줄이기 위한 인증 흐름, 권한 검증 책임 및 공통 보안 연동 구조 설계",
+      "BFF 책임 분리: 핵심 도메인 규칙은 도메인 서비스에 유지하고, 화면별 데이터 조합·호출 오케스트레이션 등 애플리케이션 로직은 BFF에 배치하도록 경계 설계",
+      "Frontend Core Framework: Next.js·React·TypeScript 기반 애플리케이션 구조, 공통 레이아웃, API 클라이언트, 상태 관리, 오류 처리 및 개발 규약 설계·개발",
+      "Design System 도입: 공통 UI 컴포넌트와 디자인 규칙을 프론트엔드 개발 기반에 연결해 화면 일관성 및 재사용성 강화"
     ],
-    roles: ["Application Architecture", "Frontend Development", "AI-Assisted Engineering"],
-    responsibilities: ["백오피스 화면 구조 및 API 연동", "의견관리 기능 구현", "공통 UI와 개발 환경 검토"],
-    challenges: ["기존 운영 기능의 신규 구조 전환", "프론트엔드와 API 간 데이터 정합성 확보", "동시 권한 요청의 중복 조회 감소와 캐시 무효화·보안 경계 간 균형"],
-    badgeLabel: "Backoffice Modernization",
+    roles: ["Application Architect", "Frontend Architecture & Core Development", "Technical Leadership"],
+    responsibilities: [
+      "도메인별 특성을 반영한 MSA 서비스 경계와 연동 구조 설계",
+      "공통 인증·인가 아키텍처 및 보안 책임 경계 정의",
+      "BFF와 도메인 서비스 간 애플리케이션/도메인 로직 분리 설계",
+      "프론트엔드 전체 프레임워크와 공통 코어 모듈 설계·개발",
+      "Design System 도입 및 공통 컴포넌트 체계 정립"
+    ],
+    challenges: [
+      "도메인별 독립성과 공통 플랫폼 정책의 균형",
+      "BFF가 비즈니스 도메인 규칙을 소유하지 않도록 계층별 책임 명확화",
+      "서비스별 인증·인가 정책의 일관성과 확장성 확보",
+      "여러 기능 조직이 활용할 수 있는 프론트엔드 코어의 재사용성과 변경 용이성 확보"
+    ],
+    badgeLabel: "Core Architecture",
     isSpotlight: true
   },
   {
