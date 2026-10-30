@@ -9,7 +9,8 @@ const ARCH_IDS = [
   "frontend-conventions-design-system",
   "cjone-newgms-backoffice",
   "cjone-global-oauth-platform",
-  "ai-augmented-engineering-leadership"
+  "ai-augmented-engineering-leadership",
+  "agent-harness-and-ai-workforce"
 ];
 
 export function ArchitectureHighlightSection() {
