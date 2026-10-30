@@ -6,7 +6,11 @@ import { ExperienceCard } from "@/entities/experience/ui/experience-card";
 const ARCH_IDS = [
   "biz-ads-center-aws-optimization",
   "cjone-msa-cqrs-points",
-  "frontend-conventions-design-system"
+  "frontend-conventions-design-system",
+  "cjone-newgms-backoffice",
+  "cjone-global-oauth-platform",
+  "ai-augmented-engineering-leadership",
+  "agent-harness-and-ai-workforce"
 ];
 
 export function ArchitectureHighlightSection() {
@@ -20,7 +24,7 @@ export function ArchitectureHighlightSection() {
         description="AWS·MSA·CQRS·DevOps·프론트엔드 아키텍처까지 설계 단계에서부터 참여한 경험을 중심으로 정리했습니다."
       />
 
-      <div className="grid gap-4 md:grid-cols-3">
+      <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
         {items.map((item) => (
           <ExperienceCard
             key={item.id}

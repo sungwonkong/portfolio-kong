@@ -1,6 +1,76 @@
 import type { ExperienceItem } from "./experience.types";
 
 export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "cjone-newgms-backoffice",
+    company: "CJ OliveNetworks",
+    team: "CJ ONE 팀",
+    period: "2026 ~ Present",
+    title: "newGms | MSA·BFF·프론트엔드 코어 아키텍처",
+    kind: "architecture",
+    techStack: ["Next.js", "React", "TypeScript", "Java", "Spring Boot", "Redis", "TanStack Query", "Figma"],
+    summary: "신규 백오피스 플랫폼의 MSA 도메인 경계, 공통 인증·인가, BFF 책임 분리, 프론트엔드 애플리케이션 프레임을 아우르는 코어 아키텍처를 설계·개발하고 있습니다. 개별 화면보다 서비스 간 책임과 개발 표준을 먼저 정의해 확장성과 팀 개발 일관성을 확보하는 데 집중했습니다.",
+    highlights: [
+      "MSA: 도메인별 데이터 소유권·업무 규칙·변경 주기·장애 경계를 고려한 서비스 분리와 연동 책임 설계",
+      "BFF: Next.js 계층에 세션 처리·API 집계·화면별 응답 조합 등 애플리케이션 오케스트레이션을 배치하고, 도메인 규칙·트랜잭션·비즈니스 상태는 Spring Boot 서비스에 유지",
+      "공통 인증·인가: BFF permission guard, Java 인증 API, Redis 권한 캐시, TanStack Query의 역할을 구분하고 동시 요청 최적화(singleflight, L1/L2 캐시)와 무효화 전략 검토",
+      "프론트엔드 코어: 라우팅·레이아웃·API 클라이언트·상태 관리·오류 처리·공통 UI 구조를 표준화하는 Next.js 프레임워크 설계·개발",
+      "디자인 시스템 도입: Figma 기반 디자인 토큰과 Filter·Chip·Table·Button·Pagination 등 공통 컴포넌트를 신규 백오피스 UI에 적용",
+      "Orbit 의견관리 화면을 실제 적용 사례로 활용해 코어 구조의 API 연동과 UI 상태 흐름 검증"
+    ],
+    roles: ["Application Architect", "Frontend Architecture & Development Lead", "Core Platform Engineering"],
+    responsibilities: [
+      "도메인별 MSA 경계 및 서비스 간 책임 설계",
+      "BFF 애플리케이션 로직과 백엔드 도메인 로직 분리",
+      "공통 인증·인가와 권한 캐시 구조 검토",
+      "프론트엔드 프레임워크 및 개발 표준 설계·구현",
+      "디자인 시스템 도입과 공통 UI 기반 구축"
+    ],
+    challenges: [
+      "도메인 규칙이 BFF에 유입되지 않도록 책임 경계 유지",
+      "다수 API의 동시 권한 조회에 따른 중복 호출 및 캐시 정합성 문제",
+      "독립적인 도메인 변경과 일관된 사용자 경험을 동시에 지원"
+    ],
+    badgeLabel: "Core Architecture",
+    isSpotlight: true
+  },
+  {
+    id: "agent-harness-and-ai-workforce",
+    company: "CJ OliveNetworks",
+    team: "AI Engineering Initiative",
+    period: "2026 ~ Present",
+    title: "Enterprise AI Employee | 사내 업무 실행형 AI 에이전트 플랫폼",
+    kind: "architecture",
+    techStack: ["Enterprise AI CLI/API", "GitLab", "Confluence", "Jira", "Microsoft Teams API", "Agent Orchestration", "Knowledge Base"],
+    summary:
+      "사내 인증을 거친 로컬 AI CLI/API를 실행 엔진으로 활용하고 GitLab·Confluence·Jira의 분산된 업무 지식을 연결해, Microsoft Teams에서 자연어로 업무를 지시하면 AI 에이전트가 Jira 티켓을 처리하고 실행 결과를 메신저로 보고하는 사내 AI 직원 플랫폼을 설계·구현했습니다. 단순 질의응답을 넘어 기업 내부 지식과 업무 실행 도구를 연결하는 Enterprise Agentic Workflow를 구축한 경험입니다.",
+    highlights: [
+      "Enterprise AI Integration: 사내 승인된 로컬 AI CLI/API를 기반으로 내부 시스템과 연동되는 AI 실행 구조 설계·구현",
+      "Enterprise Knowledge Layer: GitLab의 코드·개발 이력, Confluence의 문서, Jira의 업무 정보를 연결한 통합 지식 저장소 구축",
+      "Agentic Workflow: Teams 업무 지시 → 관련 사내 지식 조회 → Jira 티켓 처리 → 실행 결과 Teams 회신으로 이어지는 업무 자동화 흐름 구현",
+      "Tool & System Integration: GitLab·Confluence·Jira·Teams API를 연결해 대화 인터페이스와 실제 업무 처리 시스템 간 경계 설계",
+      "Architecture Ownership: 에이전트 실행 흐름, 사내 지식 연계, 업무 자동화 및 결과 피드백까지 엔드투엔드 설계·개발"
+    ],
+    roles: ["Solution Architect", "AI Agent Platform Engineering", "End-to-End Development"],
+    responsibilities: [
+      "사내 AI 실행 환경 및 업무 시스템 연동 아키텍처 설계",
+      "GitLab·Confluence·Jira 기반 지식 저장소 구축",
+      "Teams 기반 자연어 업무 지시 및 결과 회신 프로세스 구현",
+      "Jira 티켓 자동 처리 에이전트 워크플로 개발"
+    ],
+    achievements: [
+      "사내 업무 지식 검색과 실행 기능을 하나의 AI 에이전트 워크플로로 통합",
+      "메신저에서 업무 지시부터 Jira 처리 결과 확인까지 연결되는 실행형 인터페이스 구현"
+    ],
+    challenges: [
+      "서로 다른 사내 시스템의 지식과 업무 실행 흐름 통합",
+      "AI 응답 생성과 실제 업무 시스템 변경 작업 간 책임 경계 설계",
+      "사내 인증된 AI 실행 환경에서 여러 API를 조합하는 엔드투엔드 오케스트레이션"
+    ],
+    badgeLabel: "Enterprise Agentic AI",
+    isSpotlight: true
+  },
+
   // 현재 진행 중인 핵심 플랫폼 프로젝트
   {
     id: "cjone-partner-settlement-center",
@@ -54,14 +124,15 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Java",
       "Spring Boot",
       "OAuth 2.0",
+      "PKCE",
       "Redis"
     ],
     summary:
       "CJ ONE 글로벌 서비스 전반에서 공통으로 사용할 수 있는 OAuth 기반 인증 플랫폼 구축 프로젝트입니다. 분산되어 있던 인증 연동 방식을 표준화하고, 공통 SDK와 토큰 관리 정책을 통해 서비스별 중복 구현을 줄이는 플랫폼 아키텍처를 설계하고 있습니다.",
     highlights: [
-      "OAuth 2.0 Authorization Code Flow를 기반으로 글로벌 서비스가 공통으로 사용할 인증 플랫폼 구조 설계",
+      "OAuth 2.0 Authorization Code Flow 및 PKCE 전환을 고려한 글로벌 공통 인증 흐름 설계",
       "공통 SDK 개발을 리드해 서비스별 인증 연동 방식을 표준화하고 중복 구현을 줄이는 방향 수립",
-      "Refresh Token 관리와 Redis 기반 토큰 저장 전략을 검토하며 보안성과 확장성을 함께 고려"
+      "Access/Refresh Token 수명주기와 Redis 기반 임시 인증 상태 관리 전략을 검토하며 보안성과 확장성을 함께 고려"
     ],
     roles: [
       "Application Architect",
