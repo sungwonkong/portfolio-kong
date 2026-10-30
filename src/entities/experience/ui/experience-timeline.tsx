@@ -8,7 +8,7 @@ type Props = { onlyRecent?: boolean };
 
 export function ExperienceTimeline({ onlyRecent }: Props) {
   const [showLegacy, setShowLegacy] = useState(false);
-  const visible = EXPERIENCES.filter((item) => item.kind !== "legacy");
+  const visible = EXPERIENCES.filter((item) => item.kind !== "legacy" && !item.isSpotlight);
   const legacy = EXPERIENCES.filter((item) => item.kind === "legacy");
 
   return (

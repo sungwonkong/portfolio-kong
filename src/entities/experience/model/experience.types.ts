@@ -18,6 +18,8 @@ export type ExperienceItem = {
   isSpotlight?: boolean;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   gallery?: { src: string; alt?: string }[];
   links?: { label: string; href: string }[];
   isRecent?: boolean;

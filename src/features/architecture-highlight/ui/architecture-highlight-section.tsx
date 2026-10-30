@@ -5,7 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { SectionTitle } from "@/shared/ui/section-title";
 import { EXPERIENCES } from "@/entities/experience/model/experience.data";
-import { ExperienceCard } from "@/entities/experience/ui/experience-card";
 
 const FEATURED = [
   { id: "cjone-newgms-backoffice", number: "01", label: "PLATFORM ARCHITECTURE", gradient: "from-cyan-500/25 via-blue-500/10 to-transparent" },
@@ -13,13 +12,11 @@ const FEATURED = [
   { id: "biz-ads-center-aws-optimization", number: "03", label: "CLOUD & DELIVERY", gradient: "from-orange-500/20 via-amber-500/10 to-transparent" },
   { id: "agent-harness-and-ai-workforce", number: "04", label: "AGENTIC AI ENGINEERING", gradient: "from-violet-500/25 via-fuchsia-500/10 to-transparent" }
 ];
-const OTHERS = ["cjone-partner-settlement-center", "cjone-msa-cqrs-points"];
 
 export function ArchitectureHighlightSection() {
   const [active, setActive] = useState(0);
   const selected = FEATURED[active];
   const item = EXPERIENCES.find((exp) => exp.id === selected.id);
-  const others = OTHERS.map((id) => EXPERIENCES.find((exp) => exp.id === id)).filter((exp): exp is (typeof EXPERIENCES)[number] => Boolean(exp));
 
   return (
     <section id="architecture" className="scroll-mt-24 space-y-7">
@@ -45,16 +42,17 @@ export function ArchitectureHighlightSection() {
                     <Image
                       src={exp.image}
                       alt={exp.imageAlt ?? exp.title}
-                      width={1440}
-                      height={900}
+                      width={exp.imageWidth ?? 1440}
+                      height={exp.imageHeight ?? 900}
+                      unoptimized={exp.id === "cjone-global-oauth-platform"}
                       sizes="(min-width: 1024px) 240px, 45vw"
-                      className="aspect-[8/5] w-full object-contain transition duration-500 group-hover:scale-[1.03]"
+                      className="aspect-[8/5] w-full object-contain"
                     />
                     <span className="block px-3 py-2 text-[10px] text-stone-600">
-                      {project.id === "agent-harness-and-ai-workforce" ? "AI 직원 · 3D 사무실 콘셉트 이미지" : project.id === "biz-ads-center-aws-optimization" ? "Biz / Ad Center · 데스크톱 실제 화면" : "멤버십센터 · 데스크톱 실제 화면"}
+                      {project.id === "agent-harness-and-ai-workforce" ? "AI 직원 · 3D 사무실 콘셉트 이미지" : project.id === "biz-ads-center-aws-optimization" ? "Biz / Ad Center · 데스크톱 실제 화면" : project.id === "cjone-global-oauth-platform" ? "CJ ONE Global · 제공 원본 이미지" : "멤버십센터 · 데스크톱 실제 화면"}
                     </span>
                   </span>
-                ) : <span className="mt-4 block overflow-hidden rounded-xl border border-white/70 bg-gradient-to-br from-white via-violet-50 to-sky-100 p-4 shadow-inner"><span className="block rounded-lg border border-stone-200 bg-white/90 p-3 shadow-sm"><span className="mb-2 flex gap-1"><i className="h-1.5 w-1.5 rounded-full bg-rose-300" /><i className="h-1.5 w-1.5 rounded-full bg-amber-300" /><i className="h-1.5 w-1.5 rounded-full bg-emerald-300" /></span><span className="block h-2 w-2/3 rounded bg-violet-100" /><span className="mt-2 block h-2 w-full rounded bg-sky-100" /><span className="mt-2 block h-2 w-4/5 rounded bg-stone-100" /></span><span className="mt-3 block text-[10px] font-medium text-stone-500">데스크톱 실제 화면 캡처 준비 중</span></span>}
+                ) : null}
                 <span className="mt-3 block text-xs text-slate-600">{active === index ? "선택됨 · 아래 상세 보기 ↓" : "클릭하여 상세 보기 ↗"}</span>
               </button>
             );
@@ -74,7 +72,7 @@ export function ArchitectureHighlightSection() {
               <div className="mt-6 grid gap-4">
                 {[{ src: item.image, alt: item.imageAlt ?? item.title }, ...(item.gallery ?? [])].map((picture) => (
                   <figure key={picture.src} className="overflow-hidden rounded-xl border border-stone-200 bg-stone-50">
-                    <Image src={picture.src} alt={picture.alt ?? item.title} width={1440} height={900} sizes="(min-width: 1152px) 1000px, 90vw" className="h-auto w-full" />
+                    <Image src={picture.src} alt={picture.alt ?? item.title} width={item.imageWidth ?? 1440} height={item.imageHeight ?? 900} unoptimized={item.id === "cjone-global-oauth-platform"} sizes="(min-width: 1152px) 1000px, 90vw" className={item.imageHeight && item.imageWidth && item.imageHeight > item.imageWidth ? "mx-auto h-auto max-h-[640px] w-auto max-w-full object-contain" : "h-auto w-full"} />
                     <figcaption className="border-t border-stone-200 px-4 py-2 text-xs text-stone-600">{picture.alt ?? item.title}</figcaption>
                   </figure>
                 ))}
@@ -98,12 +96,6 @@ export function ArchitectureHighlightSection() {
               {item && <Link href={`/experience/${item.id}`} className="inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">프로젝트 전체 보기 <span className="ml-2">↗</span></Link>}
             </div>
           </div>
-        </div>
-      </div>
-      <div className="space-y-4 border-t border-stone-200 pt-7">
-        <h3 className="text-lg font-semibold text-slate-900">더 많은 플랫폼 설계 경험</h3>
-        <div className="grid gap-4 md:grid-cols-2">
-          {others.map((exp) => <ExperienceCard key={exp.id} item={exp} />)}
         </div>
       </div>
     </section>
