@@ -27,12 +27,15 @@ export function ArchitectureHighlightSection() {
             const exp = EXPERIENCES.find((entry) => entry.id === project.id);
             return (
               <button
+                data-reveal
+                data-motion-delay={index * 70}
+                data-spotlight
                 key={project.id}
                 type="button"
                 onClick={() => setActive(index)}
                 aria-pressed={active === index}
                 aria-controls="architecture-detail"
-                className={`group relative overflow-hidden rounded-2xl border p-4 text-left transition-all duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 sm:p-5 ${active === index ? "scale-[1.01] border-violet-400 bg-slate-800 shadow-lg shadow-black/25" : "border-slate-700 bg-slate-900 hover:-translate-y-1 hover:border-violet-400 hover:bg-slate-800"}`}
+                className={`motion-spotlight group relative isolate overflow-hidden rounded-2xl border p-4 text-left transition-all duration-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300 sm:p-5 ${active === index ? "scale-[1.01] border-violet-400 bg-slate-800 shadow-lg shadow-black/25" : "border-slate-700 bg-slate-900 hover:-translate-y-1 hover:border-violet-400 hover:bg-slate-800"}`}
               >
                 <span className={`absolute inset-y-0 left-0 w-1 bg-gradient-to-b from-cyan-300 to-violet-400 transition-opacity duration-500 ${active === index ? "opacity-100" : "opacity-0"}`} />
                 <span className="text-[10px] font-bold tracking-[0.2em] text-violet-300">{project.number} / {project.label}</span>
@@ -93,7 +96,7 @@ export function ArchitectureHighlightSection() {
                 {item?.techStack.slice(0, 6).map((tech) => <span key={tech} className="rounded-full border border-slate-700 bg-slate-950 px-3 py-1 text-[11px] text-slate-300">{tech}</span>)}
               </div>
               {item?.links?.map((link) => <a key={link.href} href={link.href} target="_blank" rel="noopener noreferrer" className="mb-3 mr-3 inline-flex items-center rounded-xl border border-violet-400/40 bg-slate-800 px-5 py-3 text-sm font-bold text-violet-200 transition hover:bg-slate-700">{link.label} 보기 ↗</a>)}
-              {item && <Link href={`/experience/${item.id}`} className="inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">프로젝트 전체 보기 <span className="ml-2">↗</span></Link>}
+              {item && <Link href={`/experience/${item.id}`} className="motion-button inline-flex items-center rounded-xl bg-violet-600 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-violet-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-300">프로젝트 전체 보기 <span aria-hidden="true" className="motion-arrow ml-2">↗</span></Link>}
             </div>
           </div>
         </div>
