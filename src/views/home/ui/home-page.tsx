@@ -10,6 +10,11 @@ export function HomePage() {
     <PortfolioMotion>
       <HeroSection />
       <ArchitectureHighlightSection />
+      <section aria-labelledby="recognition-title" className="rounded-2xl border border-stone-300/60 bg-stone-100/80 p-6 text-stone-800 shadow-sm sm:p-8">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-stone-500">Recognition · 2026</p>
+        <h2 id="recognition-title" className="mt-3 text-xl font-bold sm:text-2xl">CJ OliveNetworks 핵심인재(HCL) 선정</h2>
+        <p className="mt-3 max-w-3xl text-sm leading-7 text-stone-600 sm:text-base">신규 서비스 구축과 Full-stack 아키텍처 설계, 프론트엔드 기술 리딩 등 다양한 프로젝트에서 쌓은 경험을 바탕으로 사내 핵심인재 프로그램에 선정되었습니다.</p>
+      </section>
       <section id="experience" className="scroll-mt-24 space-y-6">
         <SectionTitle
           eyebrow="Experience"
