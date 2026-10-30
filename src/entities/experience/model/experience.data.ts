@@ -14,14 +14,38 @@ export const EXPERIENCES: ExperienceItem[] = [
       "멤버십 의견관리(/membership/opinions)의 검색·목록·상태·페이징 기능 설계 및 개발",
       "backoffice.feedback 데이터 모델과 백엔드 API를 고려한 화면 연동 구조 검토",
       "Figma 디자인 시스템 기반 공통 UI 및 사용자 피드백 패턴 적용",
-      "Spring Boot·Gradle 개발 환경의 소스 경로 및 빌드 이슈 분석"
+      "Spring Boot·Gradle 개발 환경의 소스 경로 및 빌드 이슈 분석",
+      "권한 조회 API 중복 요청 문제에 대해 BFF 단일 요청 병합(singleflight), 단기 L1 캐시, Redis L2 캐시 및 권한 검증 경계 설계안을 비교 검토"
     ],
-    roles: ["Frontend Development", "Application Architecture"],
+    roles: ["Application Architecture", "Frontend Development", "AI-Assisted Engineering"],
     responsibilities: ["백오피스 화면 구조 및 API 연동", "의견관리 기능 구현", "공통 UI와 개발 환경 검토"],
-    challenges: ["기존 운영 기능의 신규 구조 전환", "프론트엔드와 API 간 데이터 정합성 확보"],
+    challenges: ["기존 운영 기능의 신규 구조 전환", "프론트엔드와 API 간 데이터 정합성 확보", "동시 권한 요청의 중복 조회 감소와 캐시 무효화·보안 경계 간 균형"],
     badgeLabel: "Backoffice Modernization",
     isSpotlight: true
   },
+  {
+    id: "ai-augmented-engineering-leadership",
+    company: "CJ OliveNetworks",
+    team: "CJ ONE 팀",
+    period: "2026 ~ Present",
+    title: "AI-Augmented Engineering / 개발 협업 체계 고도화",
+    kind: "architecture",
+    techStack: ["Codex", "Claude", "Figma MCP", "Git", "Next.js", "Spring Boot"],
+    summary: "AI 코딩 에이전트를 개발 과정에 활용하면서, 설계 의사결정과 코드 검증 책임은 엔지니어가 유지하는 협업 방식을 발전시키고 있습니다. 프로젝트 컨텍스트와 개발 규칙을 공유해 AI 지원 구현·검토의 일관성을 높이는 방향을 탐색하고 있습니다.",
+    highlights: [
+      "Codex CLI 및 원격 개발 워크플로를 활용한 저장소 탐색, 문제 분석, 구현·검증 작업 방식 검토",
+      "Claude를 활용한 백엔드·프론트엔드 기능 구현과 Figma MCP 디자인 시스템 연동 작업 협업",
+      "AGENTS.md 및 프로젝트별 개발 컨텍스트를 활용한 코딩 에이전트의 작업 범위와 기준 정리",
+      "개발자별 질문·설계 대안·결론을 공유하기 위한 MCP 기반 팀 엔지니어링 메모리 플랫폼 구상",
+      "AI가 제안한 변경사항을 실제 빌드·테스트·코드 리뷰로 검증하는 사람 중심 품질 관리 원칙"
+    ],
+    roles: ["Technical Leadership", "AI-Assisted Engineering", "Architecture Review"],
+    responsibilities: ["AI 개발 도구 활용 방식 정립", "기술 설계와 구현 작업의 검토", "팀 지식 공유 체계 구상"],
+    challenges: ["AI 생성 코드의 검증 가능성과 유지보수성 확보", "개인별 AI 컨텍스트를 팀 차원의 재사용 가능한 기술 지식으로 확장"],
+    badgeLabel: "AI Engineering",
+    isSpotlight: true
+  },
+
   // 현재 진행 중인 핵심 플랫폼 프로젝트
   {
     id: "cjone-partner-settlement-center",
