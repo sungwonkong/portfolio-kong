@@ -48,7 +48,7 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
               item.isRecent && <Badge>Recent</Badge>
             )}
             {item.isCondensed && (
-              <span className="text-[10px] text-slate-500">
+              <span className="text-[10px] text-slate-400">
                 요약
               </span>
             )}

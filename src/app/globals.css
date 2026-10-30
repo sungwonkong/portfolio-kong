@@ -4,7 +4,8 @@
 
 html,
 body {
-  @apply bg-[#f7f2e9] text-slate-900;
+  @apply bg-slate-950 text-slate-100;
+  color-scheme: dark;
 }
 
 @keyframes portfolio-reveal {
