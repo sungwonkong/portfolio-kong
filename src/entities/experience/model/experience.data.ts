@@ -39,20 +39,35 @@ export const EXPERIENCES: ExperienceItem[] = [
     company: "CJ OliveNetworks",
     team: "AI Engineering Initiative",
     period: "2026 ~ Present",
-    title: "Agent Harness · 사내 AI 직원 협업 모델 연구",
+    title: "Enterprise AI Employee | 사내 업무 실행형 AI 에이전트 플랫폼",
     kind: "architecture",
-    techStack: ["Codex", "Claude", "MCP", "AGENTS.md", "Git"],
-    summary: "AI 코딩 에이전트의 일회성 사용을 넘어 프로젝트 컨텍스트, 역할, 작업 기준, 검증 절차를 연결하는 Agent Harness와 역할 기반 AI 직원 협업 모델을 탐색하고 있습니다. 실제 운영·배포 여부와 분리해 아키텍처 및 엔지니어링 프로세스 관점의 연구 과제로 정리했습니다.",
+    techStack: ["Enterprise AI CLI/API", "GitLab", "Confluence", "Jira", "Microsoft Teams API", "Agent Orchestration", "Knowledge Base"],
+    summary:
+      "사내 인증을 거친 로컬 AI CLI/API를 실행 엔진으로 활용하고 GitLab·Confluence·Jira의 분산된 업무 지식을 연결해, Microsoft Teams에서 자연어로 업무를 지시하면 AI 에이전트가 Jira 티켓을 처리하고 실행 결과를 메신저로 보고하는 사내 AI 직원 플랫폼을 설계·구현했습니다. 단순 질의응답을 넘어 기업 내부 지식과 업무 실행 도구를 연결하는 Enterprise Agentic Workflow를 구축한 경험입니다.",
     highlights: [
-      "Agent Harness: AGENTS.md와 저장소별 컨텍스트를 통해 에이전트의 역할·제약·검증 기준을 명시하는 접근 검토",
-      "MCP 기반 도구 연결과 Git 작업 흐름을 활용한 AI 보조 개발의 재현성·추적성 개선 방향 탐색",
-      "사내 AI 직원: 리서치·개발·기획·디자인 등 역할별 에이전트 협업 및 산출물 검증 프로세스 구상",
-      "에이전트 제안, 실제 코드 변경, 테스트 결과, 사람의 승인 결정을 분리하는 Human-in-the-loop 원칙"
+      "Enterprise AI Integration: 사내 승인된 로컬 AI CLI/API를 기반으로 내부 시스템과 연동되는 AI 실행 구조 설계·구현",
+      "Enterprise Knowledge Layer: GitLab의 코드·개발 이력, Confluence의 문서, Jira의 업무 정보를 연결한 통합 지식 저장소 구축",
+      "Agentic Workflow: Teams 업무 지시 → 관련 사내 지식 조회 → Jira 티켓 처리 → 실행 결과 Teams 회신으로 이어지는 업무 자동화 흐름 구현",
+      "Tool & System Integration: GitLab·Confluence·Jira·Teams API를 연결해 대화 인터페이스와 실제 업무 처리 시스템 간 경계 설계",
+      "Architecture Ownership: 에이전트 실행 흐름, 사내 지식 연계, 업무 자동화 및 결과 피드백까지 엔드투엔드 설계·개발"
     ],
-    roles: ["AI Engineering Architecture", "Technical Initiative"],
-    responsibilities: ["에이전트 실행 컨텍스트 및 검증 절차 설계 검토", "역할 기반 AI 협업 워크플로 구상"],
-    challenges: ["에이전트 결과의 검증 가능성", "공유 지식과 실행 권한의 분리", "AI 산출물의 책임성과 재현성"],
-    badgeLabel: "AI Architecture",
+    roles: ["Solution Architect", "AI Agent Platform Engineering", "End-to-End Development"],
+    responsibilities: [
+      "사내 AI 실행 환경 및 업무 시스템 연동 아키텍처 설계",
+      "GitLab·Confluence·Jira 기반 지식 저장소 구축",
+      "Teams 기반 자연어 업무 지시 및 결과 회신 프로세스 구현",
+      "Jira 티켓 자동 처리 에이전트 워크플로 개발"
+    ],
+    achievements: [
+      "사내 업무 지식 검색과 실행 기능을 하나의 AI 에이전트 워크플로로 통합",
+      "메신저에서 업무 지시부터 Jira 처리 결과 확인까지 연결되는 실행형 인터페이스 구현"
+    ],
+    challenges: [
+      "서로 다른 사내 시스템의 지식과 업무 실행 흐름 통합",
+      "AI 응답 생성과 실제 업무 시스템 변경 작업 간 책임 경계 설계",
+      "사내 인증된 AI 실행 환경에서 여러 API를 조합하는 엔드투엔드 오케스트레이션"
+    ],
+    badgeLabel: "Enterprise Agentic AI",
     isSpotlight: true
   },
 
