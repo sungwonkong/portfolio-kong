@@ -6,58 +6,34 @@ export const EXPERIENCES: ExperienceItem[] = [
     company: "CJ OliveNetworks",
     team: "CJ ONE 팀",
     period: "2026 ~ Present",
-    title: "CJ ONE newGms — MSA·BFF·Frontend Core Architecture",
+    title: "newGms | MSA·BFF·프론트엔드 코어 아키텍처",
     kind: "architecture",
-    techStack: ["MSA", "BFF", "React", "Next.js", "TypeScript", "Java", "Spring Boot", "OAuth 2.0", "Design System"],
-    summary:
-      "CJ ONE newGms 플랫폼의 코어 아키텍처를 설계·개발하는 프로젝트입니다. 도메인별 업무 특성을 반영한 MSA 경계를 정의하고, 공통 인증·인가 체계와 BFF를 통한 도메인 로직/애플리케이션 로직의 책임 분리를 설계했습니다. 프론트엔드 전반의 애플리케이션 프레임워크와 공통 개발 기반을 직접 설계·개발하며 플랫폼 차원의 일관성과 확장성을 확보하는 데 집중했습니다.",
+    techStack: ["Next.js", "React", "TypeScript", "Java", "Spring Boot", "Redis", "TanStack Query", "Figma"],
+    summary: "신규 백오피스 플랫폼의 MSA 도메인 경계, 공통 인증·인가, BFF 책임 분리, 프론트엔드 애플리케이션 프레임을 아우르는 코어 아키텍처를 설계·개발하고 있습니다. 개별 화면보다 서비스 간 책임과 개발 표준을 먼저 정의해 확장성과 팀 개발 일관성을 확보하는 데 집중했습니다.",
     highlights: [
-      "MSA 도메인 아키텍처: 각 업무 도메인의 특성과 책임을 분석해 서비스 경계 및 도메인 간 연동 구조 설계",
-      "공통 인증·인가: 서비스별 중복을 줄이기 위한 인증 흐름, 권한 검증 책임 및 공통 보안 연동 구조 설계",
-      "BFF 책임 분리: 핵심 도메인 규칙은 도메인 서비스에 유지하고, 화면별 데이터 조합·호출 오케스트레이션 등 애플리케이션 로직은 BFF에 배치하도록 경계 설계",
-      "Frontend Core Framework: Next.js·React·TypeScript 기반 애플리케이션 구조, 공통 레이아웃, API 클라이언트, 상태 관리, 오류 처리 및 개발 규약 설계·개발",
-      "Design System 도입: 공통 UI 컴포넌트와 디자인 규칙을 프론트엔드 개발 기반에 연결해 화면 일관성 및 재사용성 강화"
+      "MSA: 도메인별 데이터 소유권·업무 규칙·변경 주기·장애 경계를 고려한 서비스 분리와 연동 책임 설계",
+      "BFF: Next.js 계층에 세션 처리·API 집계·화면별 응답 조합 등 애플리케이션 오케스트레이션을 배치하고, 도메인 규칙·트랜잭션·비즈니스 상태는 Spring Boot 서비스에 유지",
+      "공통 인증·인가: BFF permission guard, Java 인증 API, Redis 권한 캐시, TanStack Query의 역할을 구분하고 동시 요청 최적화(singleflight, L1/L2 캐시)와 무효화 전략 검토",
+      "프론트엔드 코어: 라우팅·레이아웃·API 클라이언트·상태 관리·오류 처리·공통 UI 구조를 표준화하는 Next.js 프레임워크 설계·개발",
+      "디자인 시스템 도입: Figma 기반 디자인 토큰과 Filter·Chip·Table·Button·Pagination 등 공통 컴포넌트를 신규 백오피스 UI에 적용",
+      "Orbit 의견관리 화면을 실제 적용 사례로 활용해 코어 구조의 API 연동과 UI 상태 흐름 검증"
     ],
-    roles: ["Application Architect", "Frontend Architecture & Core Development", "Technical Leadership"],
+    roles: ["Application Architect", "Frontend Architecture & Development Lead", "Core Platform Engineering"],
     responsibilities: [
-      "도메인별 특성을 반영한 MSA 서비스 경계와 연동 구조 설계",
-      "공통 인증·인가 아키텍처 및 보안 책임 경계 정의",
-      "BFF와 도메인 서비스 간 애플리케이션/도메인 로직 분리 설계",
-      "프론트엔드 전체 프레임워크와 공통 코어 모듈 설계·개발",
-      "Design System 도입 및 공통 컴포넌트 체계 정립"
+      "도메인별 MSA 경계 및 서비스 간 책임 설계",
+      "BFF 애플리케이션 로직과 백엔드 도메인 로직 분리",
+      "공통 인증·인가와 권한 캐시 구조 검토",
+      "프론트엔드 프레임워크 및 개발 표준 설계·구현",
+      "디자인 시스템 도입과 공통 UI 기반 구축"
     ],
     challenges: [
-      "도메인별 독립성과 공통 플랫폼 정책의 균형",
-      "BFF가 비즈니스 도메인 규칙을 소유하지 않도록 계층별 책임 명확화",
-      "서비스별 인증·인가 정책의 일관성과 확장성 확보",
-      "여러 기능 조직이 활용할 수 있는 프론트엔드 코어의 재사용성과 변경 용이성 확보"
+      "도메인 규칙이 BFF에 유입되지 않도록 책임 경계 유지",
+      "다수 API의 동시 권한 조회에 따른 중복 호출 및 캐시 정합성 문제",
+      "독립적인 도메인 변경과 일관된 사용자 경험을 동시에 지원"
     ],
     badgeLabel: "Core Architecture",
     isSpotlight: true
   },
-  {
-    id: "ai-augmented-engineering-leadership",
-    company: "CJ OliveNetworks",
-    team: "CJ ONE 팀",
-    period: "2026 ~ Present",
-    title: "AI-Augmented Engineering / 개발 협업 체계 고도화",
-    kind: "architecture",
-    techStack: ["Codex", "Claude", "Figma MCP", "Git", "Next.js", "Spring Boot"],
-    summary: "AI 코딩 에이전트를 개발 과정에 활용하면서, 설계 의사결정과 코드 검증 책임은 엔지니어가 유지하는 협업 방식을 발전시키고 있습니다. 프로젝트 컨텍스트와 개발 규칙을 공유해 AI 지원 구현·검토의 일관성을 높이는 방향을 탐색하고 있습니다.",
-    highlights: [
-      "Codex CLI 및 원격 개발 워크플로를 활용한 저장소 탐색, 문제 분석, 구현·검증 작업 방식 검토",
-      "Claude를 활용한 백엔드·프론트엔드 기능 구현과 Figma MCP 디자인 시스템 연동 작업 협업",
-      "AGENTS.md 및 프로젝트별 개발 컨텍스트를 활용한 코딩 에이전트의 작업 범위와 기준 정리",
-      "개발자별 질문·설계 대안·결론을 공유하기 위한 MCP 기반 팀 엔지니어링 메모리 플랫폼 구상",
-      "AI가 제안한 변경사항을 실제 빌드·테스트·코드 리뷰로 검증하는 사람 중심 품질 관리 원칙"
-    ],
-    roles: ["Technical Leadership", "AI-Assisted Engineering", "Architecture Review"],
-    responsibilities: ["AI 개발 도구 활용 방식 정립", "기술 설계와 구현 작업의 검토", "팀 지식 공유 체계 구상"],
-    challenges: ["AI 생성 코드의 검증 가능성과 유지보수성 확보", "개인별 AI 컨텍스트를 팀 차원의 재사용 가능한 기술 지식으로 확장"],
-    badgeLabel: "AI Engineering",
-    isSpotlight: true
-  },
-
   // 현재 진행 중인 핵심 플랫폼 프로젝트
   {
     id: "cjone-partner-settlement-center",
