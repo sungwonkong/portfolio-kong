@@ -34,6 +34,28 @@ export const EXPERIENCES: ExperienceItem[] = [
     badgeLabel: "Core Architecture",
     isSpotlight: true
   },
+  {
+    id: "agent-harness-and-ai-workforce",
+    company: "CJ OliveNetworks",
+    team: "AI Engineering Initiative",
+    period: "2026 ~ Present",
+    title: "Agent Harness · 사내 AI 직원 협업 모델 연구",
+    kind: "architecture",
+    techStack: ["Codex", "Claude", "MCP", "AGENTS.md", "Git"],
+    summary: "AI 코딩 에이전트의 일회성 사용을 넘어 프로젝트 컨텍스트, 역할, 작업 기준, 검증 절차를 연결하는 Agent Harness와 역할 기반 AI 직원 협업 모델을 탐색하고 있습니다. 실제 운영·배포 여부와 분리해 아키텍처 및 엔지니어링 프로세스 관점의 연구 과제로 정리했습니다.",
+    highlights: [
+      "Agent Harness: AGENTS.md와 저장소별 컨텍스트를 통해 에이전트의 역할·제약·검증 기준을 명시하는 접근 검토",
+      "MCP 기반 도구 연결과 Git 작업 흐름을 활용한 AI 보조 개발의 재현성·추적성 개선 방향 탐색",
+      "사내 AI 직원: 리서치·개발·기획·디자인 등 역할별 에이전트 협업 및 산출물 검증 프로세스 구상",
+      "에이전트 제안, 실제 코드 변경, 테스트 결과, 사람의 승인 결정을 분리하는 Human-in-the-loop 원칙"
+    ],
+    roles: ["AI Engineering Architecture", "Technical Initiative"],
+    responsibilities: ["에이전트 실행 컨텍스트 및 검증 절차 설계 검토", "역할 기반 AI 협업 워크플로 구상"],
+    challenges: ["에이전트 결과의 검증 가능성", "공유 지식과 실행 권한의 분리", "AI 산출물의 책임성과 재현성"],
+    badgeLabel: "AI Architecture",
+    isSpotlight: true
+  },
+
   // 현재 진행 중인 핵심 플랫폼 프로젝트
   {
     id: "cjone-partner-settlement-center",
