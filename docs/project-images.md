@@ -19,7 +19,7 @@ newGms·정산센터·Partner Front·멤버십센터는 동일 프로젝트로 �
 ## 검증 결과
 
 - `pnpm install --frozen-lockfile`, `pnpm build`, `pnpm lint`, `git diff --check` 통과.
-- 프로덕션 서버를 Chromium으로 확인: 1440 × 1000에서 카드 4개가 한 행에 배치되고 베이지 배경 유지.
+- 프로덕션 서버를 Chromium으로 확인: 1440 × 1000에서 카드 4개가 한 행에 배치됨. 배경은 가독성 개선 후 slate-950 어두운 테마로 변경.
 - 대표 프로젝트 4개 선택 및 상세 경로 4개 HTTP 200 확인.
 - newGms 1장, Biz/Ad 2장, AI 사무실 1장의 이미지 디코딩 확인. OAuth는 사용자 제공 원본 이미지.
 - 390px 모바일에서 수평 넘침 없음.

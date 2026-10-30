@@ -7,11 +7,11 @@ type Props = {
 
 export function AppShell({ children }: Props) {
   return (
-    <div className="min-h-screen bg-[#f7f2e9] text-slate-900">
+    <div className="min-h-screen bg-slate-950 text-slate-100">
       <div className="mx-auto flex max-w-6xl flex-col px-4 pb-16 pt-4 sm:px-6 lg:px-8">
         <MainNav />
         <main className="mt-6 flex-1 space-y-12">{children}</main>
-        <footer className="mt-10 border-t border-stone-200 pt-4 text-xs text-slate-500">
+        <footer className="mt-10 border-t border-slate-800 pt-4 text-xs text-slate-400">
           © {new Date().getFullYear()} 공성원. All rights reserved.
         </footer>
       </div>
