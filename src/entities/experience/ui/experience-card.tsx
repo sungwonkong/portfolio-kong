@@ -16,9 +16,9 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
   return (
     <article
       className={[
-        "relative rounded-xl border border-slate-700/60 bg-slate-900/60 p-4 shadow-sm backdrop-blur-sm transition hover:border-teal-400/60 hover:shadow-teal-500/10 hover:-translate-y-0.5",
-        item.isSpotlight ? "border-amber-300/30 shadow-amber-500/10" : "",
-        emphasizeArchitecture && isArchitecture ? "ring-1 ring-teal-400/80" : ""
+        "group relative h-full rounded-2xl border border-slate-700/70 bg-slate-900/85 p-5 shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-1 hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-950/30 sm:p-6",
+        item.isSpotlight ? "border-teal-400/30" : "",
+        emphasizeArchitecture && isArchitecture ? "ring-1 ring-teal-400/25" : ""
       ]
         .filter(Boolean)
         .join(" ")}
@@ -26,7 +26,7 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
       <Link href={`/experience/${item.id}`} className="block">
         <div className="flex flex-wrap items-start justify-between gap-3">
           <div>
-            <h3 className="text-base font-semibold text-slate-50 sm:text-lg">
+            <h3 className="text-lg font-bold leading-snug tracking-tight text-white sm:text-xl group-hover:text-teal-200">
               {item.title}
             </h3>
             <p className="text-xs text-slate-400">
@@ -41,7 +41,7 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
           </div>
           <div className="flex flex-col items-end gap-1">
             {item.badgeLabel ? (
-              <Badge className="animate-pulse border-amber-300/60 bg-amber-300/10 text-amber-200 shadow-[0_0_18px_rgba(251,191,36,0.18)]">
+              <Badge className="border-teal-400/40 bg-teal-400/10 text-teal-200">
                 {item.badgeLabel}
               </Badge>
             ) : (
@@ -56,16 +56,17 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
           </div>
         </div>
 
-        <p className="mt-3 text-sm text-slate-300">{item.summary}</p>
+        <p className="mt-4 text-sm leading-7 text-slate-200">{item.summary}</p>
 
-        <ul className="mt-3 space-y-1.5 text-xs text-slate-400">
-          {item.highlights.map((h) => (
+        <ul className="mt-4 space-y-2 text-xs leading-5 text-slate-400">
+          {item.highlights.slice(0, emphasizeArchitecture ? 3 : 2).map((h) => (
             <li key={h} className="flex gap-2">
               <span className="mt-1 h-[3px] w-[3px] rounded-full bg-teal-400/70" />
               <span>{h}</span>
             </li>
           ))}
         </ul>
+        <p className="mt-4 text-xs font-semibold text-teal-300">프로젝트 상세 보기 →</p>
       </Link>
 
       {item.links && item.links.length > 0 && (
@@ -87,7 +88,7 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
       )}
 
         <div className="mt-3 flex flex-wrap gap-1.5">
-          {item.techStack.map((t) => (
+          {item.techStack.slice(0, 6).map((t) => (
             <span
               key={t}
               className="rounded-full bg-slate-800/80 px-2 py-0.5 text-[10px] text-slate-300"
