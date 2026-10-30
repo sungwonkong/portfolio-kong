@@ -1,6 +1,27 @@
 import type { ExperienceItem } from "./experience.types";
 
 export const EXPERIENCES: ExperienceItem[] = [
+  {
+    id: "cjone-newgms-backoffice",
+    company: "CJ OliveNetworks",
+    team: "CJ ONE 팀",
+    period: "2026 ~ Present",
+    title: "CJ ONE newGms / Orbit 백오피스 고도화",
+    kind: "architecture",
+    techStack: ["React", "Next.js", "TypeScript", "Java", "Spring Boot", "Gradle", "PostgreSQL"],
+    summary: "CJ ONE 운영 백오피스의 신규 기능을 개발하며 Orbit 멤버십 의견관리 화면을 newGms 환경에서 확장하는 프로젝트입니다. 화면 구조, API 연동 및 디자인 시스템 적용을 중심으로 작업하고 있습니다.",
+    highlights: [
+      "멤버십 의견관리(/membership/opinions)의 검색·목록·상태·페이징 기능 설계 및 개발",
+      "backoffice.feedback 데이터 모델과 백엔드 API를 고려한 화면 연동 구조 검토",
+      "Figma 디자인 시스템 기반 공통 UI 및 사용자 피드백 패턴 적용",
+      "Spring Boot·Gradle 개발 환경의 소스 경로 및 빌드 이슈 분석"
+    ],
+    roles: ["Frontend Development", "Application Architecture"],
+    responsibilities: ["백오피스 화면 구조 및 API 연동", "의견관리 기능 구현", "공통 UI와 개발 환경 검토"],
+    challenges: ["기존 운영 기능의 신규 구조 전환", "프론트엔드와 API 간 데이터 정합성 확보"],
+    badgeLabel: "Backoffice Modernization",
+    isSpotlight: true
+  },
   // 현재 진행 중인 핵심 플랫폼 프로젝트
   {
     id: "cjone-partner-settlement-center",
@@ -54,14 +75,15 @@ export const EXPERIENCES: ExperienceItem[] = [
       "Java",
       "Spring Boot",
       "OAuth 2.0",
+      "PKCE",
       "Redis"
     ],
     summary:
       "CJ ONE 글로벌 서비스 전반에서 공통으로 사용할 수 있는 OAuth 기반 인증 플랫폼 구축 프로젝트입니다. 분산되어 있던 인증 연동 방식을 표준화하고, 공통 SDK와 토큰 관리 정책을 통해 서비스별 중복 구현을 줄이는 플랫폼 아키텍처를 설계하고 있습니다.",
     highlights: [
-      "OAuth 2.0 Authorization Code Flow를 기반으로 글로벌 서비스가 공통으로 사용할 인증 플랫폼 구조 설계",
+      "OAuth 2.0 Authorization Code Flow 및 PKCE 전환을 고려한 글로벌 공통 인증 흐름 설계",
       "공통 SDK 개발을 리드해 서비스별 인증 연동 방식을 표준화하고 중복 구현을 줄이는 방향 수립",
-      "Refresh Token 관리와 Redis 기반 토큰 저장 전략을 검토하며 보안성과 확장성을 함께 고려"
+      "Access/Refresh Token 수명주기와 Redis 기반 임시 인증 상태 관리 전략을 검토하며 보안성과 확장성을 함께 고려"
     ],
     roles: [
       "Application Architect",
