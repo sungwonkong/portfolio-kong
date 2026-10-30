@@ -17,3 +17,71 @@ body {
   .portfolio-reveal { animation: none; }
   *, *::before, *::after { scroll-behavior: auto !important; }
 }
+
+/* Content stays visible if JavaScript or motion APIs are unavailable. */
+html { scroll-behavior: smooth; }
+.motion-spotlight::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  border-radius: inherit;
+  opacity: 0;
+  background: radial-gradient(420px circle at var(--pointer-x, 50%) var(--pointer-y, 50%), rgb(139 92 246 / 0.09), transparent 70%);
+  transition: opacity 250ms ease;
+}
+.motion-spotlight[data-pointer-active]::after { opacity: 1; }
+.hero-grid {
+  opacity: 0.18;
+  background-image: linear-gradient(rgb(129 140 248 / 0.24) 1px, transparent 1px), linear-gradient(90deg, rgb(129 140 248 / 0.24) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(120deg, transparent 35%, black);
+}
+@keyframes portfolio-orbit {
+  from { transform: translate3d(-20px, 15px, 0) scale(0.9); }
+  to { transform: translate3d(35px, 55px, 0) scale(1.2); }
+}
+.portfolio-orb { animation: portfolio-orbit 12s ease-in-out infinite alternate; }
+.hero-signal { overflow: hidden; opacity: 0.55; }
+.hero-signal span {
+  position: absolute;
+  left: -24%;
+  width: 24%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #a78bfa, #67e8f9, transparent);
+  animation: portfolio-signal 8s linear infinite;
+}
+.hero-signal span:nth-child(1) { top: 20%; }
+.hero-signal span:nth-child(2) { top: 50%; animation-delay: -3s; }
+.hero-signal span:nth-child(3) { top: 80%; animation-delay: -5s; }
+@keyframes portfolio-signal { to { transform: translateX(520%); } }
+.motion-button { transition: background-color 200ms, transform 200ms, box-shadow 200ms; }
+.motion-button:hover, .motion-button:focus-visible { box-shadow: 0 6px 28px rgb(139 92 246 / 0.22); }
+.motion-button:active { transform: scale(0.97); }
+.motion-arrow { display: inline-block; }
+.motion-button:hover .motion-arrow, .motion-button:focus-visible .motion-arrow { animation: portfolio-arrow 450ms ease-out; }
+@keyframes portfolio-arrow {
+  40% { transform: translate(4px, -2px); }
+  70% { transform: translate(-1px, 0); }
+  100% { transform: translate(0, 0); }
+}
+@supports (animation-timeline: scroll()) {
+  .reading-progress {
+    margin: 0 !important;
+    position: fixed;
+    inset: 0 0 auto;
+    height: 2px;
+    z-index: 50;
+    pointer-events: none;
+    background: linear-gradient(90deg, #818cf8, #c4b5fd, #5eead4);
+    transform-origin: left;
+    animation: portfolio-progress linear both;
+    animation-timeline: scroll(root block);
+  }
+}
+@keyframes portfolio-progress { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+  .hero-signal, .reading-progress, .motion-spotlight::after { display: none; }
+}

@@ -8,7 +8,7 @@ type SectionTitleProps = {
 
 export function SectionTitle({ eyebrow, title, description }: SectionTitleProps) {
   return (
-    <header className="space-y-2">
+    <header data-reveal className="space-y-2">
       {eyebrow && (
         <p className="text-xs font-semibold uppercase tracking-[0.2em] text-teal-400">
           {eyebrow}

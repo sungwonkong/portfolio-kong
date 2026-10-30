@@ -1,4 +1,5 @@
 import React from "react";
+import { PortfolioMotion } from "@/shared/ui/portfolio-motion";
 import { HeroSection } from "@/widgets/hero/ui/hero-section";
 import { ArchitectureHighlightSection } from "@/features/architecture-highlight/ui/architecture-highlight-section";
 import { SectionTitle } from "@/shared/ui/section-title";
@@ -6,7 +7,7 @@ import { ExperienceTimeline } from "@/entities/experience/ui/experience-timeline
 
 export function HomePage() {
   return (
-    <>
+    <PortfolioMotion>
       <HeroSection />
       <ArchitectureHighlightSection />
       <section id="experience" className="scroll-mt-24 space-y-6">
@@ -17,6 +18,6 @@ export function HomePage() {
         />
         <ExperienceTimeline />
       </section>
-    </>
+    </PortfolioMotion>
   );
 }

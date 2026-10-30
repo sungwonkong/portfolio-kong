@@ -15,8 +15,10 @@ export function ExperienceCard({ item, emphasizeArchitecture }: Props) {
 
   return (
     <article
+      data-reveal
+      data-spotlight
       className={[
-        "group relative h-full rounded-2xl border border-slate-700/70 bg-slate-900/85 p-5 shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-1 hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-950/30 sm:p-6",
+        "motion-spotlight group relative isolate overflow-hidden h-full rounded-2xl border border-slate-700/70 bg-slate-900/85 p-5 shadow-lg shadow-black/10 transition duration-200 hover:-translate-y-1 hover:border-teal-400/60 hover:shadow-xl hover:shadow-teal-950/30 sm:p-6",
         item.isSpotlight ? "border-teal-400/30" : "",
         emphasizeArchitecture && isArchitecture ? "ring-1 ring-teal-400/25" : ""
       ]
