@@ -31,6 +31,9 @@ export const EXPERIENCES: ExperienceItem[] = [
       "다수 API의 동시 권한 조회에 따른 중복 호출 및 캐시 정합성 문제",
       "독립적인 도메인 변경과 일관된 사용자 경험을 동시에 지원"
     ],
+    image: "/images/experience/newgms-membership-desktop.webp",
+    imageAlt: "CJ ONE 멤버십센터 데스크톱 화면 — 멤버십 플랫폼 소개",
+    links: [{ label: "멤버십센터", href: "https://membership.cjone.com" }],
     badgeLabel: "Core Architecture",
     isSpotlight: true
   },
@@ -67,6 +70,8 @@ export const EXPERIENCES: ExperienceItem[] = [
       "AI 응답 생성과 실제 업무 시스템 변경 작업 간 책임 경계 설계",
       "사내 인증된 AI 실행 환경에서 여러 API를 조합하는 엔드투엔드 오케스트레이션"
     ],
+    image: "/ai-office.svg",
+    imageAlt: "AI 직원 메타버스 사무실 콘셉트 일러스트",
     badgeLabel: "Enterprise Agentic AI",
     isSpotlight: true
   },
@@ -220,12 +225,12 @@ export const EXPERIENCES: ExperienceItem[] = [
       "핵심 조회·쓰기 API에 대해 read/write 패스를 분리하고 캐시 계층(Redis)을 도입하여 응답 속도 및 비용 최적화",
       "장애 전파 범위를 컨트롤하기 위해 도메인 단위 헤드리스 서비스(파드 그룹)로 경계를 재설정하고 HPA/리소스 리밋 재조정"
     ],
-    image: "/images/experience/cjone_bizcenter.png",
-    imageAlt: "CJ ONE 비즈니스 센터 관리 화면",
+    image: "/images/experience/cjone-biz-desktop.webp",
+    imageAlt: "CJ ONE 비즈니스센터 데스크톱 메인 화면",
     gallery: [
       {
-        src: "/images/experience/biz-ads-center.png",
-        alt: "비즈니스 센터와 광고 센터 화면"
+        src: "/images/experience/cjone-ad-desktop.webp",
+        alt: "CJ ONE 광고센터 데스크톱 메인 화면"
       }
     ],
     links: [
