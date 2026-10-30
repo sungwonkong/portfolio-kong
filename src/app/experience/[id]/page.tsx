@@ -1,4 +1,4 @@
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import type { Metadata } from "next";
 import Image from "next/image";
 import { EXPERIENCES } from "@/entities/experience/model/experience.data";
@@ -11,7 +11,8 @@ type Props = {
 };
 
 function getExperience(id: string): ExperienceItem | undefined {
-  return EXPERIENCES.find((exp) => exp.id === id);
+  const canonicalId = id === "cjone-partner-settlement-center" ? "cjone-newgms-backoffice" : id;
+  return EXPERIENCES.find((exp) => exp.id === canonicalId);
 }
 
 function DetailList({ title, items }: { title: string; items?: string[] }) {
@@ -45,6 +46,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function ExperienceDetailPage({ params }: Props) {
   const { id } = await params;
+  if (id === "cjone-partner-settlement-center") {
+    permanentRedirect("/experience/cjone-newgms-backoffice");
+  }
   const exp = getExperience(id);
 
   if (!exp) {
@@ -78,9 +82,10 @@ export default async function ExperienceDetailPage({ params }: Props) {
           <Image
             src={exp.image}
             alt={exp.imageAlt ?? exp.title}
-            width={960}
-            height={540}
-            className="h-auto w-full object-cover"
+            width={exp.imageWidth ?? 1440}
+            height={exp.imageHeight ?? 900}
+            unoptimized={exp.id === "cjone-global-oauth-platform"}
+            className={exp.imageHeight && exp.imageWidth && exp.imageHeight > exp.imageWidth ? "mx-auto h-auto max-h-[720px] w-auto max-w-full object-contain" : "h-auto w-full"}
             priority
           />
         </div>
